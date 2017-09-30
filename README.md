@@ -2,10 +2,11 @@
 
 
 News API is a simple and easy-to-use API that returns JSON metadata for the headlines currently published on a range of news sources and blogs (70 and counting so far). Use it to display live news headlines and images in your app or on your site!
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
+
 
 ## Development server
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 

@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+    <header>
+    <p>News API can provide live headlines from 70 sources. Click for more details.</p>
+    <div class="container">
+    
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary" (click)="toggleFilter()" >
+        <input type="checkbox" name="options" id="filter" autocomplete="off"> Filter
+        </label>
+    </div>
+  
+    {{filters}}
+    <div class="filter-channels" *ngIf="status">
+        <label class="custom-control custom-checkbox" *ngFor="let category of categories; let i = index">
+            <input type="checkbox" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{category  | uppercase}}</span>
+        </label>
+      </div>
+     
+    </div>
+  </header>
+    
+
+      <ul class="list-group" >
+        <li (click)="onSelect(channel)" class="list-group-item" *ngFor="let channel of channelObject">{{channel.name}} | {{channel.category}}</li>
+      </ul>
+</div>
+
+  
+  

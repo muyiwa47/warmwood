@@ -1,0 +1,64 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+h3 {
+    color : green;
+}
+body {
+    font-family: candara;
+}
+.mat-list-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+header p {
+   padding: 10px;
+   background-color: #16B7DF;
+   color: white;
+}
+
+header {
+  margin: 10px
+}
+ul li, .media, .media-heading{
+    font-family: 'Raleway', sans-serif;
+}
+ul.list-group {
+  font-size: 16px;
+}
+
+.read-more {
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: #128de4;
+  font-size: 14px;
+  padding: 0 5px 0 5px;
+  color: white;
+  text-decoration: none;
+}
+.headerDiv {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
+}
+.example-card {
+    width: 400px;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+
+  .urlToimg img {
+    height: 5%;
+    margin-left: 10px;
+    min-width: 200px;
+    min-height: 112px;
+    max-width: 200px;
+    max-height: 120px;
+    padding-top: 10px;
+  }
+  .media {
+    box-shadow: 5px 5px 5px #DBD9D9;
+    padding-bottom: 10px
+  }
+
+
+/* Menu */
+

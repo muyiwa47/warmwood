@@ -9,13 +9,15 @@ import { HomeComponent } from './components/home.component';
 import { ChannelComponent } from './components/channels.component';
 import { ChannelDetailComponent } from './components/channel-details.component';
 import { routing } from './app.routing';
+import { FilterPipe } from './components/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ChannelComponent,
-    ChannelDetailComponent
+    ChannelDetailComponent,
+    FilterPipe
   ],
   imports: [BrowserModule, HttpModule, routing, MdMenuModule, FormsModule],
   providers: [],

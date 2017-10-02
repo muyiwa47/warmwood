@@ -17,12 +17,14 @@ export class HomeComponent {
   channelObject : any[];
   status: boolean;
   categories: any[];
+  arr : any[] = [];
+  myfilterStr : string;
 
   //Class Constructor
   constructor(private getChannels: getChannels, private route: Router ){
     this.title = "News API";
     this.status = true;
-    this.categories = ['general', 'entertainment' , 'gaming', 'music', 'politics', 'science-and-nature', 'sport', 'technology'];
+    this.categories = ['all', 'general', 'entertainment' , 'gaming', 'music', 'politics', 'science-and-nature', 'sport', 'technology'];
     this.channelObject = [];
     this.getChannels.getData().subscribe(channels => {
            for (var item in channels.sources){
@@ -30,24 +32,21 @@ export class HomeComponent {
            }  
            console.log(this.channelObject)
     })
-        // var count = 0, categoriesObject = {};
-        // for (var i in this.channelObject) {
-        //   if (!(categoriesObject[this.channelObject[i].category])){
-        //     categoriesObject[this.channelObject[i].category] = count++;
-        //   }
-        // }
-        // this.categories = Object.keys(categoriesObject);
-        // console.log(categoriesObject);
   }
 
   toggleFilter(){
-    if (this.status == true) {
-      this.status = false
-    } else {
-      this.status = true
-    }
+      if (this.status == true) {
+        this.status = false
+      } else {
+        this.status = true
+      }
   }
 
+  filterOption(value){
+    this.myfilterStr = value
+    return this.myfilterStr   
+  }
+    
   onSelect(channel){
     this.route.navigate(['/channels', channel.id]);
   }

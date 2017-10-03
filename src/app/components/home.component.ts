@@ -18,7 +18,7 @@ export class HomeComponent {
   status: boolean;
   categories: any[];
   arr : any[] = [];
-  myfilterStr : string;
+  myfilterStr : string = 'all';
 
   //Class Constructor
   constructor(private getChannels: getChannels, private route: Router ){

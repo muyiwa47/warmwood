@@ -16,7 +16,8 @@ header p {
 }
 
 header {
-  margin: 10px
+  margin: 10px;
+  text-align: center;
 }
 ul li, .media, .media-heading{
     font-family: 'Raleway', sans-serif;
@@ -33,7 +34,7 @@ ul.list-group {
   color: white;
   text-decoration: none;
 }
-.headerDiv {
+.headerDiv, .navbar-brand {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 24px;
 }
@@ -59,6 +60,132 @@ ul.list-group {
     padding-bottom: 10px
   }
 
+  .form-check-label {
+    padding: 15px;
+  }
 
-/* Menu */
+
+  .banner {
+    width: 100%;
+    height: 300px;
+    color: #fff;
+    background: linear-gradient(-45deg, #52067E, #6D032D, #0694C4, #03943F);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+    position: relative;
+    border-bottom: 10px solid #048AB3;
+  }
+  
+  @-webkit-keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+  
+  @-moz-keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+
+  }
+  
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+.banner div, section {
+  display: inline-block;
+}
+.banner section {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#title, #title_notes {
+   display: block
+}
+  
+.banner #title {
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+}
+
+.banner #title_notes {
+  font-family: 'Kaushan Script', cursive; 
+  font-size: 24px;
+}
+
+.backBtn {
+  padding: 10px;
+  top: 10px;
+  position: fixed;
+  right: 10px;
+  z-index: 1000;
+}
+
+.backBtn button {
+  font-family: 'Cinzel', serif;
+}
+
+
+  @media (max-width: 750px) {
+    .banner #title {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+    }
+    
+    .banner #title_notes {
+      font-family: 'Kaushan Script', cursive; 
+      font-size: 18px;
+    }
+
+    .banner section {
+      position: absolute;
+      left: 5%;
+    }
+  }
+  
+  @media (max-width: 990px) {
+    #worldmap {
+      display : none;
+    }
+    .banner {
+      height: 150px;
+    }
+    .form-check-label {
+      padding: 15px;
+      display: block;
+      text-align: left;
+    }
+ }
+
+ @media (min-width: 991) {
+  a.navbar-brand {
+    display: none;
+  }
+ }
 

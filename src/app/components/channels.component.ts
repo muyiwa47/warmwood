@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { getChannels } from '../services/getchannels.services';
 import { ActivatedRoute } from '@angular/router';
-
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -19,9 +19,13 @@ export class ChannelComponent {
   articles : articles[];
   
   //Class Constructor
-  constructor(private getChannels: getChannels, private route: ActivatedRoute){
+  constructor(private getChannels: getChannels, private route: ActivatedRoute, private router: Router){
     this.title = "Channel List";
     this.articleObject = [];
+  }
+
+  goHome(){
+    this.router.navigate(['/']);
   }
   
   ngOnInit(){

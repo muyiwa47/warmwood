@@ -2,6 +2,9 @@
   "name": "news-headlines",
   "version": "1.0.0",
   "license": "Open source",
+  "engines": {
+    "node": "7.2.0"
+  },
   "author" : "Adebanji Oguntade",
   "scripts": {
     "ng": "ng",

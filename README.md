@@ -9,8 +9,7 @@ World News Headlines is a simple and easy-to-use app that returns headlines curr
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2. and powered by News API (newsapi.org)that returns JSON metadata for the headlines. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. 
 
 ## API key
-Get an API key from https://newsapi.org/ and replace your-api-key in the getchannels.services.ts on line 16 "return this.http.get('https://newsapi.org/v1/articles?source='+source+'&apiKey=your-api-key').map(res => res.json());
- )
+Get an API key from https://newsapi.org/ and replace your-api-key in the getchannels.services.ts on line 16 `https://newsapi.org/v1/articles?source='+source+'&apiKey=your-api-key`
 
 ## Build
 

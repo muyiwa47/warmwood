@@ -8,12 +8,13 @@
   "author" : "Adebanji Oguntade",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "serve": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "start": "node server",
+    "postinstall": "ng build --target=production -e ${NODE_ENV:-production} --aot"
   },
   "private": true,
   "dependencies": {

@@ -1,30 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-        <div class="banner">
-            
+      <div class="banner">    
         <div id="worldmap"><img src="../../assets/world-map.png" alt="" /></div>
             <section>
                 <div id="title">Live Headlines</div>
                 <div id="title_notes">News headlines from 70 news sources worldwide.</div>
             </section>
-        </div>
+      </div>
     <header>
 
-    
-<!--
-    <div class="filter-channels" *ngIf="status">
-        <label class="custom-control custom-radio" *ngFor="let category of categories; let i = index">
-            <input type="checkbox" class="custom-control-input">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description" (click)="filterObject(category)">{{category  | uppercase}}</span>
-        </label>
--->
-
-        <!-- <div class="form-check form-check-inline" *ngIf="status">
-          <label class="form-check-label" *ngFor="let category of categories; let i = index">
-            <input class="form-check-input" type="radio" name="myfilters" id={{i}} value={{category}} (click)="filterOption(category)"> {{category  | uppercase}}
-          </label>
-        </div>   -->
         
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,18 +24,10 @@
                     </li>
                   </ul>
                 </div>
-                <!-- <div class="form-check form-check-inline" *ngIf="status">
-                        <label class="form-check-label" *ngFor="let category of categories; let i = index">
-                          <input class="form-check-input" type="radio" name="myfilters" id={{i}} value={{category}} (click)="filterOption(category)"> {{category  | uppercase}}
-                        </label>
-                      </div>  -->
               </nav>
-
-
-
   </header>
     
       <ul class="list-group" >
-        <li (click)="onSelect(channel)" class="list-group-item" *ngFor="let channel of channelObject | filter: myfilterStr">{{channel.name}} | {{channel.category}}</li>
+        <li (click)="onSelect(channel)" class="list-group-item news-sources" *ngFor="let channel of channelObject | filter: myfilterStr">{{channel.name}} | {{channel.category}}</li>
       </ul>
 </div> 

@@ -5,26 +5,12 @@
         <button type="button" (click)="goHome()" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
     </div>
     
-  
-    <!-- <div class="media" *ngFor="let article of articleObject">
-      <div class="media-left media-middle urlToimg">
-          <img class="" src="{{article.urlToImage}}" alt="">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">{{article.title}}</h4>
-        <p>{{article.description}}</p> <a href="{{article.url}}" class="read-more">Read more</a>
-      </div>
-    </div> -->
     <div class="card urlToimg" *ngFor="let article of articleObject">
       <!-- <img class="" src="{{article.urlToImage}}" alt=""> -->
       <div class="card-block">
         <h4 class="card-title">{{article.title}}</h4>
         <p class="card-text">{{article.description}}</p>
-        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         <a href="{{article.url}}" class="read-more">Read more</a>
       </div>
     </div>
-</div>
-
-  
-  
+</div> 

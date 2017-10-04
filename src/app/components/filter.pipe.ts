@@ -11,7 +11,6 @@ export class FilterPipe implements PipeTransform {
     }
     return channelObject.filter(function(channel){
        return channel.category.includes(myfilter.toLowerCase());
-      //return channel[0];
     })
   }
 

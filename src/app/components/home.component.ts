@@ -22,7 +22,7 @@ export class HomeComponent {
 
   //Class Constructor
   constructor(private getChannels: getChannels, private route: Router ){
-    this.title = "News API";
+    this.title = "News Headlines";
     this.status = true;
     this.categories = ['all', 'general', 'entertainment' , 'gaming', 'music', 'politics', 'science-and-nature', 'sport', 'technology'];
     this.channelObject = [];

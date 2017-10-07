@@ -7,8 +7,7 @@
      "start" : "node main.bundle.js"
   },
   "engines": {
-    "node": "6.10.2",
-    "npm" : "3.10.9"
+    "node": "6.10.2"
   },
   "private": true,
   "dependencies": {

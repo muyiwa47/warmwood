@@ -17,8 +17,8 @@ header p {
   text-align: justify;
 }
 
-ul li, .media, .media-heading{
-    font-family: 'Raleway', sans-serif;
+ul li, .media, .media-heading, .card-title, .card-text {
+  font-family: 'Raleway', sans-serif;
 }
 
 ul.list-group {
@@ -143,7 +143,7 @@ li.news-sources{
 
 .backBtn {
   padding: 10px;
-  top: 10px;
+  bottom: 5px;
   position: fixed;
   right: 10px;
   z-index: 1000;

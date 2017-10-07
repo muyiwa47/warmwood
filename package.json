@@ -4,7 +4,7 @@
   "license": "MIT",
   "author": "Adebanji Oguntade",
   "scripts": {
-     "start" : "node main.bundle.js"
+     "start" : "node dist/main.bundle.js"
   },
   "engines": {
     "node": "7.10.0"

@@ -1,5 +1,5 @@
 body {
-    font-family: candara;
+  font-family: 'Raleway', sans-serif;
 }
 
 header {
@@ -11,6 +11,10 @@ header p {
    padding: 10px;
    background-color: #16B7DF;
    color: white;
+}
+
+.card-text {
+  text-align: justify;
 }
 
 ul li, .media, .media-heading{

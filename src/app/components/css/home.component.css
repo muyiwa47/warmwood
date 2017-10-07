@@ -17,7 +17,7 @@ header p {
   text-align: justify;
 }
 
-ul li, .media, .media-heading, .card-title, .card-text {
+ul li, .media, .media-heading, .card-text {
   font-family: 'Raleway', sans-serif;
 }
 
@@ -155,7 +155,7 @@ li.news-sources{
 
 #copyright {
   position: absolute;
-  right: 10px;
+  left: 10px;
   padding: 10px 0 10px 0;
   font-family: 'Kaushan Script', cursive; 
 }

@@ -143,7 +143,7 @@ li.news-sources{
 
 .backBtn {
   padding: 10px;
-  bottom: 5px;
+  bottom: 0px;
   position: fixed;
   right: 10px;
   z-index: 1000;
@@ -175,6 +175,10 @@ li.news-sources{
     .banner section {
       position: absolute;
       left: 5%;
+    }
+
+    .card-title {
+      font-family: 'Raleway', sans-serif;
     }
   }
   

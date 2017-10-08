@@ -17,11 +17,12 @@ export class ChannelComponent {
   articleObject : any[];
   source : string;
   articles : articles[];
-  
+  preloader : boolean;
   //Class Constructor
   constructor(private getChannels: getChannels, private route: ActivatedRoute, private router: Router){
     this.title = "Channel List";
     this.articleObject = [];
+    this.preloader = true;
   }
 
   goHome(){
@@ -34,7 +35,8 @@ export class ChannelComponent {
     this.getChannels.getNews(this.source).subscribe(data => { 
       for (var item in data.articles){
         this.articleObject.push(data.articles[item]); 
-      }  
+      }
+      this.preloader = false;  
       console.log(this.articleObject)
    })
  }

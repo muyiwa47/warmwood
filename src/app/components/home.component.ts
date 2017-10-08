@@ -19,6 +19,7 @@ export class HomeComponent {
   categories: any[];
   arr : any[] = [];
   myfilterStr : string = 'all';
+  preloader: boolean;
 
   //Class Constructor
   constructor(private getChannels: getChannels, private route: Router ){
@@ -26,11 +27,13 @@ export class HomeComponent {
     this.status = true;
     this.categories = ['all', 'general', 'entertainment' , 'gaming', 'music', 'politics', 'science-and-nature', 'sport', 'technology'];
     this.channelObject = [];
+    this.preloader = true;
     this.getChannels.getData().subscribe(channels => {
            for (var item in channels.sources){
              this.channelObject.push(channels.sources[item])
            }  
-           console.log(this.channelObject)
+           this.preloader = false;
+           console.log(this.preloader);
     })
   }
 

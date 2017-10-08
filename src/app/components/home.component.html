@@ -26,11 +26,11 @@
                 </div>
               </nav>
   </header>
-    
+      <div id="preloader" *ngIf="preloader"><img src="../../assets/loading_icon.gif" /></div>
       <ul class="list-group" >
         <li (click)="onSelect(channel)" class="list-group-item news-sources" *ngFor="let channel of channelObject | filter: myfilterStr">{{channel.name}} | {{channel.category}}</li>
       </ul>
 </div> 
 <footer>
     <span id="copyright">Adebanji Oguntade &copy; 2017</span>
-  </footer>
+</footer>

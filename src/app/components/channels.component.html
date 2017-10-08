@@ -4,7 +4,7 @@
     <div class="backBtn">
         <button type="button" (click)="goHome()" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
     </div>
-    
+    <div id="preloader" *ngIf="preloader"><img src="../../assets/loading_icon.gif" /></div>
     <div class="card urlToimg" *ngFor="let article of articleObject">
       <!-- <img class="" src="{{article.urlToImage}}" alt=""> -->
       <div class="card-block">

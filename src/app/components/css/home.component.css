@@ -154,9 +154,9 @@ li.news-sources{
 }
 
 footer {
-  position: absolute;
-  left: 10px;
-  padding: 10px 0 10px 0;
+  position: relative;
+  bottom: 0px;
+  padding: 10px 0 10px 10px;
   font-family: 'Kaushan Script', cursive; 
 }
 

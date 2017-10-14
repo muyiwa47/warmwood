@@ -1,20 +1,65 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-      <div class="banner">    
+      <!-- <div class="banner">    
         <div id="worldmap"><img src="../../assets/world-map.png" alt="" /></div>
             <section>
                 <div id="title">Live Headlines</div>
                 <div id="title_notes">News headlines from 70 news sources worldwide.</div>
             </section>
-      </div>
+      </div> -->
     <header>
 
-        
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>favorite</mat-icon>
+              <span>Favorite</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>info</mat-icon>
+              <span>Info</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>settings</mat-icon>
+              <span>Settings</span>
+            </button>
+    
+            <!-- <button mat-menu-item [matMenuTriggerFor]="filterChannels">
+                <mat-icon>list</mat-icon>
+                <span>Filters</span>
+            </button> -->
+             
+            <button *ngFor="let category of categories; let i = index" id={{i}} (click)="filterOption(category); saveCategory(category)" mat-menu-item>
+                <!-- <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="myfilters" id={{i}} value={{category}} (click)="filterOption(category)"> {{category  | uppercase}}
+                </label> -->
+                <mat-icon>sort</mat-icon>
+                <span>{{category  | uppercase}}</span>
+                <mat-icon *ngIf='genre == category'>check</mat-icon>
+            </button>
+
+          </mat-menu>
+          <!-- <mat-menu #filterChannels="matMenu">
+              <span *ngFor="let category of categories; let i = index" mat-menu-item>
+              <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="myfilters" id={{i}} value={{category}} (click)="filterOption(category)"> {{category  | uppercase}}
+              </label>
+            </span>
+          </mat-menu> -->
+
+          <!-- <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="#">{{myfilterStr | uppercase}}</a>
+                </button> -->
+                <!-- <mat-radio-group class="example-radio-group">
+                    <mat-radio-button class="example-radio-button" *ngFor="let category of categories" [value]="category">
+                      {{category}}
+                    </mat-radio-button>
+                  </mat-radio-group>
+                  <div class="example-selected-value">Your Channel season is: {{favoriteChannel}}</div> -->
+                <!-- <a class="navbar-brand" href="#">{{myfilterStr | uppercase}}</a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav">
                     <li class="nav-item active">
@@ -24,13 +69,16 @@
                     </li>
                   </ul>
                 </div>
-              </nav>
+              </nav> -->
   </header>
       <div id="preloader" *ngIf="preloader"><img src="../../assets/loading_icon.gif" /></div>
-      <ul class="list-group" >
+      <div id="" *ngIf="errObject"><img src="../../assets/404.jpg" /></div>
+      <!-- <ul class="list-group" >
         <li (click)="onSelect(channel)" class="list-group-item news-sources" *ngFor="let channel of channelObject | filter: myfilterStr">{{channel.name}} | {{channel.category}}</li>
-      </ul>
+      </ul> -->
+      <mat-card (click)="onSelect(channel)" class="list-group-item news-sources" *ngFor="let channel of channelObject | filter: myfilterStr">
+              <button mat-mini-fab>
+                <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+              </button>{{channel.name}} | {{channel.category}}
+      </mat-card>
 </div> 
-<footer>
-    <span id="copyright">Adebanji Oguntade &copy; 2017</span>
-</footer>

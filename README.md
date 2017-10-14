@@ -19,7 +19,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Run `ng serve` to start the app
 
 ## Demo App Online
-`http://world-news-headlines.herokuapp.com` 
+`http://world-news-headlines.herokuapp.com/` 
 
 ## Running unit tests (Optional)
 

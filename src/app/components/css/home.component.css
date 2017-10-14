@@ -1,10 +1,27 @@
-body {
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body, .mat-card {
   font-family: 'Raleway', sans-serif;
+}
+
+.mat-card {
+  margin-top: 5px;
+}
+
+.example-card {
+  width: 400px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+button.mat-mini-fab {
+  margin-right: 10px;
+  font-size: 10px;
 }
 
 header {
   margin: 10px;
-  text-align: center;
 }
 
 header p {
@@ -135,6 +152,11 @@ li.news-sources{
 .banner #title_notes {
   font-family: 'Kaushan Script', cursive; 
   font-size: 24px;
+}
+
+.mat-menu-item {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 22px;
 }
 
 #title, #title_notes {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { getChannels } from '../services/getchannels.services';
-import { Router} from '@angular/router';
+import { Router, NavigationExtras} from '@angular/router';
 import { UpperCasePipe } from '@angular/common';
-import { MatMenuModule, MatIconModule, MatButtonModule, MatCardModule } from '@angular/material';
+import { MatMenuModule, MatIconModule, MatButtonModule, MatCardModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -25,6 +25,7 @@ export class HomeComponent {
   errObject: boolean;
   favoriteChannel : string;
   genre : string;
+  favoriteList : any[];
 
   //Class Constructor
   constructor(private getChannels: getChannels, private route: Router){
@@ -38,8 +39,10 @@ export class HomeComponent {
     this.getChannels.getData().subscribe(channels => {
            for (var item in channels.sources){
              this.channelObject.push(channels.sources[item])
-           }       
-          console.log(this.preloader);
+           }      
+             
+             console.log(this.channelObject);
+             
       }, 
           function err(err){     
             this.errObject = true;
@@ -48,14 +51,6 @@ export class HomeComponent {
             console.log(this.errObject);
           }, 
         () => this.preloader = false);
-  }
-
-  toggleFilter(){
-      if (this.status == true) {
-        this.status = false
-      } else {
-        this.status = true
-      }
   }
 
   filterOption(value){
@@ -82,5 +77,19 @@ export class HomeComponent {
 
   onSelect(channel){
     this.route.navigate(['/channels', channel.id]);
+  }
+
+  getSources(obj, index){
+    var source = obj.id;
+     return source
+  }
+
+  onSelectFavorite(){
+    let navigationExtras : NavigationExtras = {
+      queryParams: {
+        sources : this.channelObject.map(this.getSources)
+      }
+    }
+      this.route.navigate(['/favorite'], navigationExtras)
   }
 }

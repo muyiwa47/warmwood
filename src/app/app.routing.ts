@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home.component';
 import { ChannelComponent } from './components/channels.component';
+import { FavoriteComponent} from './components/favorites.component';
 
 const appRoutes: Routes = [
     {
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
     {
         path: 'channels/:id',
         component: ChannelComponent
+    },
+    {
+        path: 'favorite',
+        component: FavoriteComponent
     }
 ];
 

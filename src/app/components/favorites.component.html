@@ -5,18 +5,19 @@
           </mat-form-field>
         </li>
         <li>
-          <button mat-raised-button (click)="openDialog()">Pick one</button>
+          <button mat-raised-button checkByDefault(source) (click)="openDialog()">Pick one</button>
         </li>
         <li *ngIf="favoriteList">
           You chose: <i>{{favoriteList}}</i>
         </li>
 </ol> -->
 <button (click)="saveSources()">Add Favorites</button>
+<button (click)="getSources()">Get Favorites</button>
 <!-- <ul class="myfavorites">
 <li *ngFor="let source of sources"><mat-checkbox>{{source}}</mat-checkbox></li>
 </ul> -->
 
-<mat-card class="list-group-item news-sources" *ngFor="let source of sources; let i = index">     
+<mat-card class="list-group-item news-sources" *ngFor="let source of favoriteObjects; let i = index">     
           <!-- <mat-icon aria-label="favorite">favorite</mat-icon> -->
-          <mat-checkbox (click)="saveFavorites(source)">{{source | uppercase}}</mat-checkbox>
+          <mat-checkbox [(ngModel)]="source.status" (click)="saveFavorites(source)">{{source.name | uppercase}} | {{source.status}}</mat-checkbox>
 </mat-card>

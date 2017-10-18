@@ -13,43 +13,65 @@ export class FavoriteComponent implements OnInit{
   name: string;
   sources : string;
   myfavorites : any[] = [];
-  checked = true;
+  myvalue : any[];
+  favoriteObjects : any[] = []
 
 constructor(private route: ActivatedRoute){
     this.route.queryParams.subscribe(params => {
       this.sources = params.sources;
     }) 
-    this.getSources();
+    this.generateObjFavorite(this.sources)
+    // this.getSources();
+
+}
+
+generateObjFavorite(sources){
+
+    for (var i in sources){
+      this.favoriteObjects.push({ 'name' : sources[i], 'status' : false })
+    }
+    console.log(this.favoriteObjects)
+}
+
+checkByDefault(source){
+    return this.myfavorites.indexOf(source) !== -1
 }
 
 saveFavorites(source){
   let postion = this.myfavorites.indexOf(source)
-  if (postion != -1) {
+    if (postion != -1) {
       this.myfavorites.splice(postion, 1)
-  } else {
-    this.myfavorites.push(source)
+    } else {
+      this.myfavorites.push(source)
   }
-  console.log(this.myfavorites)
+    console.log(this.myfavorites)
 }
 
 saveSources(){
      if (localStorage){
-        localStorage.setItem('favorite', this.myfavorites.join(" "));
-     }
-     console.log(this.myfavorites.join(" "))
+        localStorage.setItem('favorite', JSON.stringify(this.myfavorites));
+        console.log("Saved" + localStorage.getItem('favorite'));
+        console.log(JSON.parse(localStorage.getItem('favorite')));
+      }
+
   }
 
   getSources(){
-    if (localStorage){
-      this.myfavorites = localStorage.getItem('favorite').split(" ");
-      console.log(this.myfavorites);
-      return this.myfavorites;
-    }
+    // if (!localStorage){
+    //   console.log(JSON.parse(localStorage.getItem('favorite')));
+    // } else {
+    //   return null
+    // }
+    console.log(JSON.parse(localStorage.getItem('favorite')));
   }
 
-  onSelectFavorite(){}
   ngOnInit(){
-
+    // if (!localStorage.favorite) {
+    //     console.log("No local Storage");
+    //        this.generateObjFavorite(this.sources);
+    //    } else {
+    //   return JSON.parse(localStorage.getItem('favorite'))
+    // }
   }
 
 }

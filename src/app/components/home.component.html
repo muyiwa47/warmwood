@@ -77,8 +77,6 @@
         <li (click)="onSelect(channel)" class="list-group-item news-sources" *ngFor="let channel of channelObject | filter: myfilterStr">{{channel.name}} | {{channel.category}}</li>
       </ul> -->
       <mat-card (click)="onSelect(channel)" class="list-group-item news-sources" *ngFor="let channel of channelObject | filter: myfilterStr">
-              <button mat-mini-fab>
-                <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
-              </button>{{channel.name}} | {{channel.category}}
+              {{channel.name}} | {{channel.category}}
       </mat-card>
 </div> 

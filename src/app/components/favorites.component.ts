@@ -8,7 +8,7 @@ import { MatCheckboxModule } from '@angular/material';
  styleUrls : ['./css/home.component.css']
 })
 
-export class FavoriteComponent implements OnInit{
+export class FavoriteComponent implements OnInit {
   favoriteList : any[];
   name: string;
   sources : string;
@@ -20,13 +20,23 @@ constructor(private route: ActivatedRoute){
     this.route.queryParams.subscribe(params => {
       this.sources = params.sources;
     }) 
-    this.generateObjFavorite(this.sources)
-    // this.getSources();
-
+    this.generateObjFavorite(this.sources);
+    this.getSources();
+    //this.setPersitentData();
 }
 
-generateObjFavorite(sources){
+// setPersitentData(){
+//   for (var i in this.favoriteList) {
+//     this.favoriteObjects.map(function(obj){
+//        if ((obj.key) == (this.favoriteList[i].key)) {
+//          this.favoriteObjects.value = true
+//        }
+//     })
+//   }
+//   console.log(this.favoriteObjects)
+// }
 
+generateObjFavorite(sources){
     for (var i in sources){
       this.favoriteObjects.push({ 'name' : sources[i], 'status' : false })
     }
@@ -57,12 +67,21 @@ saveSources(){
   }
 
   getSources(){
-    // if (!localStorage){
-    //   console.log(JSON.parse(localStorage.getItem('favorite')));
-    // } else {
-    //   return null
-    // }
-    console.log(JSON.parse(localStorage.getItem('favorite')));
+
+    this.favoriteList = JSON.parse(localStorage.getItem('favorite'));
+    console.log(this.favoriteList)
+
+
+    for (var i in this.favoriteList) {
+      for (var j in this.favoriteObjects){
+        if (this.favoriteList[i].name == this.favoriteObjects[j].name){
+          this.favoriteObjects[j].status = true
+        }
+      }
+    }
+    console.log(this.favoriteObjects)
+    // console.log(this.favoriteObjects)
+    // return this.favoriteList
   }
 
   ngOnInit(){

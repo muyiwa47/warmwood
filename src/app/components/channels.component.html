@@ -1,32 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div>
-  
+<div> 
     <div class="backBtn">
         <button type="button" (click)="goHome()" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
     </div>
     <div id="preloader" *ngIf="preloader"><img src="../../assets/loading_icon.gif" /></div>
-    <!-- <div class="card urlToimg" *ngFor="let article of articleObject">
-      <img class="" src="{{article.urlToImage}}" alt="">
-      <div class="card-block">
-        <h4 class="card-title">{{article.title}}</h4>
-        <p class="card-text">{{article.description}}</p>
-        <a href="{{article.url}}" class="read-more">Read more</a>
-      </div>
-    </div> -->
-
     <mat-card class="example-card" *ngFor="let article of articleObject">
             <mat-card-header>
               <mat-card-title>{{article.title}}</mat-card-title>
-              <!-- <mat-card-subtitle>{{article.title}}</mat-card-subtitle> -->
             </mat-card-header>
-            <img mat-card-image [src]="article.urlToImage" alt="Photo of a Shiba Inu">
+            <img mat-card-image [src]="article.urlToImage" alt="Image not found">
             <mat-card-content>
               <p>{{article.description}}</p>
             </mat-card-content>
             <mat-card-actions>
               <a href="{{article.url}}" class="read-more">Read more</a>
               <button mat-button>
-                    <mat-icon>share</mat-icon>
+                  <mat-icon>share</mat-icon>
                   Share
               </button>
             </mat-card-actions>

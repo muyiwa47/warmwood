@@ -3,8 +3,11 @@ body, .mat-card {
   font-family: 'Raleway', sans-serif;
 }
 
-.mat-card {
+.mat-card.example-card {
   margin-top: 5px;
+  left : 50%;
+  transform: translateX(-50%);
+  width: 60%;
 }
 
 .example-card {

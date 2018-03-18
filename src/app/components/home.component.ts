@@ -17,7 +17,7 @@ export class HomeComponent {
   title : string;
   channelObject : any[];
   status: boolean;
-  categories: any[];
+  categories: any;
   arr : any[] = [];
   myfilterStr : string = 'all';
   preloader: boolean;
@@ -26,21 +26,26 @@ export class HomeComponent {
   favoriteChannel : string;
   genre : string;
   favoriteList : any[];
-
+  
   //Class Constructor
   constructor(private getChannels: getChannels, private route: Router){
     this.title = "News Headlines";
     this.status = true;
-    this.categories = ['all', 'general', 'entertainment' , 'gaming', 'music', 'politics', 'science-and-nature', 'sport', 'technology'];
+    //this.categories = ['all', 'general', 'entertainment' , 'gaming', 'music', 'politics', 'science-and-nature', 'sport', 'technology'];
     this.channelObject = [];
     this.preloader = true;
     this.errObject = false;
+    this.categories = new Set();
     this.genre = this.getCategory();
     this.getChannels.getData().subscribe(channels => {
            for (var item in channels.sources){
              this.channelObject.push(channels.sources[item])
            }      
-             
+            for (var i in this.channelObject){
+              var myCategory = new Set();
+              this.categories.add(this.channelObject[i].category)
+            } 
+             console.log(this.categories);
              console.log(this.channelObject);
              
       }, 
@@ -84,12 +89,12 @@ export class HomeComponent {
      return source
   }
 
-  onSelectFavorite(){
-    let navigationExtras : NavigationExtras = {
-      queryParams: {
-        sources : this.channelObject.map(this.getSources)
-      }
-    }
-      this.route.navigate(['/favorite'], navigationExtras)
-  }
+  // onSelectFavorite(){
+  //   let navigationExtras : NavigationExtras = {
+  //     queryParams: {
+  //       sources : this.channelObject.map(this.getSources)
+  //     }
+  //   }
+  //     this.route.navigate(['/favorite'], navigationExtras)
+  // }
 }

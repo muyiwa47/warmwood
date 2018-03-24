@@ -10,13 +10,6 @@ body, .mat-card {
   width: 60%;
 }
 
-
-@media only screen and (max-width: 768px) {
-  .mat-card.example-card {
-    width: 100%;
-  }
-}
-
 .example-card {
   width: 400px;
 }
@@ -235,8 +228,15 @@ footer {
     }
  }
 
- @media (min-width: 991) {
+@media (min-width: 991) {
   a.navbar-brand {
     display: none;
+  }
+}
+
+
+ @media only screen and (max-width: 768px) {
+   .mat-card.example-card {
+   width: 100%;
   }
  }

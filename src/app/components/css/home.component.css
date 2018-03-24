@@ -236,7 +236,7 @@ footer {
 
 
  @media only screen and (max-width: 768px) {
-   .mat-card.example-card {
-   width: 100%;
+  .mat-card.example-card {
+     width: 100%;
   }
  }
